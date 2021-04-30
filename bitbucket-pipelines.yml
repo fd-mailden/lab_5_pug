@@ -1,0 +1,11 @@
+image: node:10
+pipelines:
+  tags:
+    release-*:
+      - step:
+          script:
+            - apt-get update
+            - apt-get install lftp
+            - npm install
+            - npm run build
+            - lftp -e 'mirror -R ./dist /public_html; quit' -u $FTP_USER,$FTP_PASS $FTP_HOST

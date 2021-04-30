@@ -1,0 +1,47 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Расписание
+    body 
+        div(class='top')
+            h1(class='title') Личная страница Кравченко Данила
+            div(class='top__container')
+                ul(class="allRef")
+                    li(class="point")
+                        a(href="index.html" class="ref") Личная страница
+                    li(class="point")
+                        a(href="rozklad.html" class="ref") Расписание
+                    li(class="point")    
+                        a(href="news.html" class="ref") Новости
+                    li(class="point")    
+                        a(href="photo.html" class="ref") Фото
+
+
+        h1 Моё расписания
+
+
+#table-wrapper
+  table#desc
+    tr
+      th ПН
+      th ВТ
+      th СР
+      th ЧТ
+      th ПТ
+      th Время
+    mixin row() 
+         tr 
+            td Руский
+            td МАТ
+            td ФИЗ
+            td География
+            td Биология
+            td 12.00
+    +row()
+    +row()
+    +row()
+    +row()
+    +row()  
